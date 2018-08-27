@@ -49,14 +49,35 @@ export default {
   data() {
     return {
       docWidth: true,
-      activeNum:'1'
+      activeNum: "1"
     };
   },
   mounted() {
-      if (this.$el.clientWidth<830) {
-          this.docWidth = !this.docWidth; 
-      }
+    if (this.$router.history.current.query.activeNum) {
+      this.activeNum = this.$router.history.current.query.activeNum;
+    }
+    if (this.$el.clientWidth < 875) {
+      this.docWidth = false;
+    }
+    window.onresize = () => {
+      const that = this;
+      return (() => {
+        if (this.$el.clientWidth < 875) {
+          window.docWidth = false;
+          that.docWidth = window.docWidth;
+        } else {
+          window.docWidth = true;
+          that.docWidth = window.docWidth;
+        }
+      })();
+    };
   },
+  watch: {
+    $route(to, from) {
+      console.log(to);
+      this.activeNum = to.query.activeNum;
+    }
+  }
 };
 </script>
 <style scoped>

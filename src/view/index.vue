@@ -66,7 +66,8 @@ export default {
       this.$router.push({
         path:'upload',
         query:{
-          type:e
+          type:e,
+          activeNum:'2',
         }
       })
     }
