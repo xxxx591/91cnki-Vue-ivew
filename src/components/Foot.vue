@@ -4,18 +4,18 @@
 
 <script>
 export default {
-    name:'foot',
-    data(){
-        return{
-
-        }
-    },
-    
+  name: "foot",
+  data() {
+    return {};
+  }
 };
 </script>
 
 <style scoped>
-.layout-footer-center{
-    text-align: center;
+.layout-footer-center {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="upload">
+  <div class="upload"  style="margin-bottom:70px;">
     <Row :gutter="16">
       <Col span="18" style="margin-top:20px;" :xs="24" :sm="18" :md="18">
       <h3 class="title">第一步：上传文章</h3>
@@ -192,6 +192,10 @@ export default {
       margin-top: 0;
       padding-left: 0;
     }
+    img{
+      width: 164px;
+      height: 164px;
+    }
   }
   p {
     margin-top: 20px;
@@ -247,7 +251,7 @@ export default {
     width: auto;
   }
   .sub-ipt {
-    width: 230px !important;
+    width: 255px !important;
   }
   .left-pay {
     .gzh {

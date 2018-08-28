@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="margin-bottom:70px;">
 
 
   <div class="index-box">

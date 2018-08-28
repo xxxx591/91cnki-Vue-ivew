@@ -1,21 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/view/index'
-import upload from '@/view/upload'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'index',
-      component: index
+      component: resolve => require(['@/view/index'], resolve)
     },
     {
       path: '/upload',
       name: '文章上传',
-      component: upload
+      component: resolve => require(['@/view/upload'], resolve)
+    },
+    {
+      path: '/flower',
+      name: '检测流程',
+      component: resolve => require(['@/view/flower'], resolve)
+    },
+    {
+      path: '/download',
+      name: '文章下载',
+      component: resolve => require(['@/view/download'], resolve)
     },
 
   ]
