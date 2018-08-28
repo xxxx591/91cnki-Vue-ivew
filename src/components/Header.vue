@@ -21,7 +21,7 @@
         <MenuItem name="3" to="flower">
         <Icon type="ios-flower" /> 检测流程
         </MenuItem>
-        <MenuItem name="4">
+        <MenuItem name="4" to="download">
         <Icon type="ios-download" /> 下载报告
         </MenuItem>
         <MenuItem name="5">

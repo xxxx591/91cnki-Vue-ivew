@@ -36,7 +36,7 @@ export default {};
 .flower-box {
   width: 1200px;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 36px;
   margin-top: 20px;
   position: relative;

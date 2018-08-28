@@ -44,6 +44,7 @@
           <li>知网查重时字数超过了怎么办？</li>
           <li>知网查重时字数超过了怎么办？</li>
         </ul>
+        <p class="show-more">查看更多</p>
       </Col>
       <Col span="6" style="margin:20px 0;" :xs="24" :sm="12" :md="12">
         <h1>行业新闻</h1>
@@ -61,15 +62,15 @@ export default {
       msg: "Welcome to Your Vue.js App"
     };
   },
-  methods:{
-    routerToUpload(e){
+  methods: {
+    routerToUpload(e) {
       this.$router.push({
-        path:'upload',
-        query:{
-          type:e,
-          activeNum:'2',
+        path: "upload",
+        query: {
+          type: e,
+          activeNum: "2"
         }
-      })
+      });
     }
   }
 };
@@ -118,16 +119,20 @@ export default {
     border-left: 5px solid #2d8cf0;
     padding-left: 20px;
   }
-  ul{
-    li{
+  ul {
+    li {
       line-height: 2;
       cursor: pointer;
       padding-left: 25px;
-      span{
-        float:right;
+      span {
+        float: right;
         margin-right: 20px;
       }
     }
+  }
+  .show-more {
+    text-align: right;
+    padding-right: 20px;
   }
 }
 @media screen and (max-width: 1200px) {
