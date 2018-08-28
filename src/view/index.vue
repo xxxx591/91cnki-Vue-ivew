@@ -44,7 +44,7 @@
           <li>知网查重时字数超过了怎么办？</li>
           <li>知网查重时字数超过了怎么办？</li>
         </ul>
-        <p class="show-more">查看更多</p>
+        <p class="show-more">查看更多>></p>
       </Col>
       <Col span="6" style="margin:20px 0;" :xs="24" :sm="12" :md="12">
         <h1>行业新闻</h1>
@@ -133,6 +133,7 @@ export default {
   .show-more {
     text-align: right;
     padding-right: 20px;
+    cursor: pointer;
   }
 }
 @media screen and (max-width: 1200px) {
