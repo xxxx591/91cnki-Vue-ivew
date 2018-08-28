@@ -35,9 +35,10 @@
             <Icon type="ios-arrow-down"></Icon>
           </Button>
           <DropdownMenu slot="list">
-            <DropdownItem>检测系统</DropdownItem>
-            <DropdownItem>检测流程</DropdownItem>
-            <DropdownItem>下载报告</DropdownItem>
+            <DropdownItem to="/">首页</DropdownItem>
+            <DropdownItem to="upload?type=pmlc">检测系统</DropdownItem>
+            <DropdownItem to="flower">检测流程</DropdownItem>
+            <DropdownItem to="download">下载报告</DropdownItem>
             <DropdownItem>人工降重</DropdownItem>
 
           </DropdownMenu>
