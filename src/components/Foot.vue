@@ -14,8 +14,5 @@ export default {
 <style scoped>
 .layout-footer-center {
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 </style>
