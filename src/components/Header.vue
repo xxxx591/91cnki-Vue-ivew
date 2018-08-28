@@ -35,10 +35,21 @@
             <Icon type="ios-arrow-down"></Icon>
           </Button>
           <DropdownMenu slot="list">
-            <DropdownItem to="/">首页</DropdownItem>
-            <DropdownItem to="upload?type=pmlc">检测系统</DropdownItem>
-            <DropdownItem to="flower">检测流程</DropdownItem>
-            <DropdownItem to="download">下载报告</DropdownItem>
+            <DropdownItem><router-link to="/">首页</router-link></DropdownItem>
+            <Dropdown placement="right-start">
+                <DropdownItem trigger="click">
+                    检测系统
+                    <Icon type="ios-arrow-forward"></Icon>
+                </DropdownItem>
+                <DropdownMenu slot="list">
+                    <DropdownItem><router-link to="/upload?type=pmlc">本科论文检测</router-link></DropdownItem>
+                    <DropdownItem><router-link to="/upload?type=pmlc">研究生论文检测</router-link></DropdownItem>
+                    <DropdownItem><router-link to="/upload?type=pmlc">期刊检测</router-link></DropdownItem>
+                    <DropdownItem><router-link to="/upload?type=pmlc">小分解</router-link></DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
+            <DropdownItem to="flower"><router-link to="/flower">检测流程</router-link></DropdownItem>
+            <DropdownItem to="download"><router-link to="/download">下载报告</router-link></DropdownItem>
             <DropdownItem>人工降重</DropdownItem>
 
           </DropdownMenu>
