@@ -79,8 +79,8 @@ export default {
       msg: "Welcome to Your Vue.js App",
       goodsList: [
         {goodsName:'论文查重',img:require('../assets/images/test.png'),remarks:'<p>一款免费的论文检测</p>'},
-        {goodsName:'论文查重',img:require('../assets/images/test.png'),remarks:'<p>一款免费的论文检测</p>'},
-        {goodsName:'论文查重',img:require('../assets/images/test.png'),remarks:'<p>一款免费的论文检测</p>'}
+        // {goodsName:'论文查重',img:require('../assets/images/test.png'),remarks:'<p>一款免费的论文检测</p>'},
+        // {goodsName:'论文查重',img:require('../assets/images/test.png'),remarks:'<p>一款免费的论文检测</p>'}
       ]
     };
   },

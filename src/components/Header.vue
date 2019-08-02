@@ -48,7 +48,7 @@
             </Dropdown>
             <DropdownItem to="flower"><router-link to="/flower">检测流程</router-link></DropdownItem>
             <DropdownItem to="download"><router-link to="/download">下载报告</router-link></DropdownItem>
-            <DropdownItem>人工降重</DropdownItem>
+            <!-- <DropdownItem>人工降重</DropdownItem> -->
 
           </DropdownMenu>
         </Dropdown>
