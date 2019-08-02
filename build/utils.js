@@ -47,7 +47,8 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        fallback: 'vue-style-loader'
+        fallback: 'vue-style-loader',
+        publicPath:'../../'
       })
     } else {
       return ['vue-style-loader'].concat(loaders)
@@ -63,7 +64,7 @@ exports.cssLoaders = function (options) {
     scss: generateLoaders('sass').concat({
       loader: 'sass-resources-loader',
       options: {
-          //你自己的scss全局文件的路径
+        //你自己的scss全局文件的路径
         resources: path.resolve(__dirname, '../src/assets/style/index.scss')
       }
     }),

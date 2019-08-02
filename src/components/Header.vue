@@ -12,10 +12,8 @@
           <Icon type="ios-list-box" /> 检测系统
           </template>
           <MenuGroup>
-            <MenuItem name="2-1" to="upload?type=pmlc">本科论文检测</MenuItem>
-            <MenuItem name="2-2">研究生论文检测</MenuItem>
-            <MenuItem name="2-3">期刊检测</MenuItem>
-            <MenuItem name="2-4">小分解</MenuItem>
+            <MenuItem :name="index"  v-for="(item,index) in goodsList" :key="index"  :to="'upload?goodId='+item.goodsId">{{item.goodsName}}</MenuItem>
+             
           </MenuGroup>
         </Submenu>
         <MenuItem name="3" to="flower">
@@ -24,9 +22,9 @@
         <MenuItem name="4" to="download">
         <Icon type="ios-download" /> 下载报告
         </MenuItem>
-        <MenuItem name="5">
+        <!-- <MenuItem name="5">
         <Icon type="md-create" /> 人工降重
-        </MenuItem>
+        </MenuItem> -->
       </div>
       <div class="layout-nav" v-else>
         <Dropdown trigger="click" >
@@ -42,10 +40,10 @@
                     <Icon type="ios-arrow-forward"></Icon>
                 </DropdownItem>
                 <DropdownMenu slot="list">
-                    <DropdownItem><router-link to="/upload?type=pmlc">本科论文检测</router-link></DropdownItem>
-                    <DropdownItem><router-link to="/upload?type=pmlc">研究生论文检测</router-link></DropdownItem>
-                    <DropdownItem><router-link to="/upload?type=pmlc">期刊检测</router-link></DropdownItem>
-                    <DropdownItem><router-link to="/upload?type=pmlc">小分解</router-link></DropdownItem>
+                    <DropdownItem :name="index"  v-for="(item,index) in goodsList" :key="index" >
+                      <router-link :to="'upload?goodId='+item.goodsId">{{item.goodsName}}</router-link>
+                      </DropdownItem>
+
                 </DropdownMenu>
             </Dropdown>
             <DropdownItem to="flower"><router-link to="/flower">检测流程</router-link></DropdownItem>
@@ -65,10 +63,16 @@ export default {
   data() {
     return {
       docWidth: true,
-      activeNum: "1"
+      activeNum: "1",
+      goodsList:[
+        {goodsName:'本科论文',goodsId:1},
+        {goodsName:'期刊查询',goodsId:2},
+        {goodsName:'学士论文',goodsId:3},
+      ]
     };
   },
   mounted() {
+    // this.init()
     if (this.$router.history.current.query.activeNum) {
       this.activeNum = this.$router.history.current.query.activeNum;
     }
@@ -88,9 +92,31 @@ export default {
       })();
     };
   },
+  methods:{
+    init(){
+      this.$axios
+        .post("/outApi/goods/list", {
+          pageSize: 10,
+          pageNum: 1,
+          isAsc: "asc"
+        })
+        .then(res => {
+          console.log(res);
+          this.goodsList = res.data.rows;
+        });
+    },
+    go(id){
+      this.$router.push({
+        path: "upload",
+        query: {
+          goodId: e
+        }
+      });
+    }
+  },
   watch: {
     $route(to, from) {
-      console.log(to);
+      // console.log(to);
       this.activeNum = to.query.activeNum;
     }
   }

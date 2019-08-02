@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [{
       path: '/',
       name: 'index',
@@ -23,6 +24,16 @@ export default new Router({
       path: '/download',
       name: '文章下载',
       component: resolve => require(['@/view/download'], resolve)
+    },
+    {
+      path: '/news/news-detail',
+      name: '新闻详情页',
+      component: resolve => require(['@/view/news/new'], resolve)
+    },
+    {
+      path: '/details',
+      name: '订单详情页面',
+      component: resolve => require(['@/view/details'], resolve)
     },
 
   ]

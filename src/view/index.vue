@@ -1,57 +1,74 @@
 <template>
-<div style="margin-bottom:70px;">
-
-
-  <div class="index-box">
-    <div class="content">
-      <div class="h1">
-        <h1>知网论文查重 大学本科研究生硕博毕业论文查重入口</h1>
-      </div>
-      <div class="h2">
-        <h2>知网论文查重入口，检测结果100%与学校、杂志社相同！<router-link to="" class="h2-a">[查看论文检测报告单样例]</router-link></h2>
-      </div>
-      <div class="h2">
-        <h2>24小时自助，系统自动检测，论文安全不泄露。30分钟-2小时下载报告。<router-link to="" class="h2-a">[检测流程]</router-link></h2>
-      </div>
-      <div class="h2">
-        <h2>学术诚信是一种态度，抵制抄袭，鼓励原创，检测务必认准学术不端知网查重入口，结果和学校单位一致，准确放心！</h2>
+  <div style="margin-bottom:70px;">
+    <div class="index-box">
+      <div class="content">
+        <div class="h1">
+          <h1>知网论文查重 大学本科研究生硕博毕业论文查重入口</h1>
+        </div>
+        <div class="h2">
+          <h2>知网论文查重入口，检测结果100%与学校、杂志社相同！
+            <router-link to class="h2-a">[查看论文检测报告单样例]</router-link>
+          </h2>
+        </div>
+        <div class="h2">
+          <h2>24小时自助，系统自动检测，论文安全不泄露。30分钟-2小时下载报告。
+            <router-link to class="h2-a">[检测流程]</router-link>
+          </h2>
+        </div>
+        <div class="h2">
+          <h2>学术诚信是一种态度，抵制抄袭，鼓励原创，检测务必认准学术不端知网查重入口，结果和学校单位一致，准确放心！</h2>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="goodlist">
-    <Row :gutter="16">
-      
-        <Col span="6" style="margin-top:20px;" :xs="24" :sm="8" :md="6">
-            <Card>
-                <p slot="title">本科大学生PMLC查重专用</p>
-                <p class="content">大学生本科学位论文检测系统。</p>
-                <p class="content">权威本科院校检测系统</p>
-                <p class="content">专用于本科毕业学位论文重复率检测</p>
-                <p class="content">查重结果保证和学校一致！</p>
-                <p class="price content">198元/篇</p>
-                <p  class="content"><Button long type="primary" @click="routerToUpload('pmlc')">立即检测</Button></p>
-            </Card>
+    <div class="goodlist">
+      <Row :gutter="16">
+        <Col
+          span="6"
+          style="margin-top:20px;padding:0 20px;"
+          :xs="12"
+          :sm="8"
+          :md="6"
+          v-for="(item, index) in goodsList"
+          :key="index"
+        >
+          <Card>
+            <p slot="title" class="title">{{item.goodsName}}</p>
+            <!-- <p class="content">{{item.remarks.replace(/<(?!img).*?>/g, "")}}</p> -->
+            <p class="content">
+              <img :src="item.img" alt srcset>
+            </p>
+            <p v-html="item.remarks" class="content"></p>
+            <!-- <p class="price">{{item.goodsPrice}}元/{{company(item.company)}}</p> -->
+            <p class="price">免费检测</p>
+            <p>
+              <Button long type="primary" @click="routerToUpload(item.goodsId)">立即检测</Button>
+            </p>
+          </Card>
         </Col>
-     
-    </Row>
+      </Row>
+    </div>
+    <div class="new-list">
+      <Row :gutter="16">
+        <Col span="6" style="margin:20px 0;" :xs="24" :sm="12" :md="12">
+          <h1>行业新闻</h1>
+          <ul>
+            <li>
+              <router-link
+                :to="{ path: '/news/news-detail', query: { userId: '123' }}"
+              >知网查重时字数超过了怎么办？</router-link>
+              <span>2018-08-08</span>
+            </li>
+            <li>知网查重时字数超过了怎么办？</li>
+            <li>知网查重时字数超过了怎么办？</li>
+          </ul>
+          <p class="show-more">查看更多>></p>
+        </Col>
+        <Col span="6" style="margin:20px 0;" :xs="24" :sm="12" :md="12">
+          <h1>行业新闻</h1>
+        </Col>
+      </Row>
+    </div>
   </div>
-  <div class="new-list">
-    <Row :gutter="16">
-      <Col span="6" style="margin:20px 0;" :xs="24" :sm="12" :md="12">
-        <h1>行业新闻</h1>
-        <ul>
-          <li>知网查重时字数超过了怎么办？ <span>2018-08-08</span> </li>
-          <li>知网查重时字数超过了怎么办？</li>
-          <li>知网查重时字数超过了怎么办？</li>
-        </ul>
-        <p class="show-more">查看更多>></p>
-      </Col>
-      <Col span="6" style="margin:20px 0;" :xs="24" :sm="12" :md="12">
-        <h1>行业新闻</h1>
-      </Col>
-    </Row>
-  </div>
-</div>
 </template>
 
 <script>
@@ -59,16 +76,43 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      msg: "Welcome to Your Vue.js App",
+      goodsList: [
+        {goodsName:'论文查重',img:require('../assets/images/test.png'),remarks:'<p>一款免费的论文检测</p>'},
+        {goodsName:'论文查重',img:require('../assets/images/test.png'),remarks:'<p>一款免费的论文检测</p>'},
+        {goodsName:'论文查重',img:require('../assets/images/test.png'),remarks:'<p>一款免费的论文检测</p>'}
+      ]
     };
   },
+  mounted() {
+    // this.getGoodsList();
+  },
+  computed: {
+    company() {
+      return function(num) {
+        return num == 1?'篇':'千字'
+      };
+    }
+  },
   methods: {
+    getGoodsList() {
+      this.$axios
+        .post("/outApi/goods/list", {
+          pageSize: 10,
+          pageNum: 1,
+          isAsc: "asc"
+        })
+        .then(res => {
+          console.log(res);
+          this.goodsList = res.data.rows;
+        });
+    },
     routerToUpload(e) {
+      console.log(e);
       this.$router.push({
         path: "upload",
         query: {
-          type: e,
-          activeNum: "2"
+          goodId: e
         }
       });
     }
@@ -100,8 +144,19 @@ export default {
 .goodlist {
   width: 1200px;
   margin: 20px auto;
-  .content {
+  .title {
+    font-size: 16px;
+    line-height: 32px;
+    height: 32px;
+  }
+  p {
     line-height: 2;
+    img{
+      width: 100%;
+    }
+  }
+  .content {
+    min-height: 160px;
   }
   .price {
     color: #ed4014;
@@ -140,6 +195,20 @@ export default {
   .goodlist,
   .new-list {
     width: auto;
+    .title {
+      font-size: 14px;
+      height: 20px;
+      line-height: 20px;
+    }
+    .content {
+      min-height: auto;
+    }
+  }
+}
+@media screen and(max-width: 420px) {
+  .index-box,
+  .new-list {
+    display: none;
   }
 }
 </style>

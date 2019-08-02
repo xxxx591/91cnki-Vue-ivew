@@ -13,6 +13,7 @@ export default {
 
 <style scoped>
 .layout-footer-center {
+  margin-top: 40px;
   text-align: center;
 }
 </style>

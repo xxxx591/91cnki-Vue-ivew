@@ -6,8 +6,17 @@ import router from './router'
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import './assets/style/index.scss'
-Vue.use(iView);
+import MetaInfo from 'vue-meta-info'
 
+import axios from 'axios'
+// axios全局配置
+Vue.prototype.$axios = axios;  
+Vue.prototype.$url = 'http://119.23.226.232:8089'
+// axios.defaults.baseURL = host
+// axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+// axios.defaults.headers['XPS-Version'] = '1.0.0'
+Vue.use(iView);
+Vue.use(MetaInfo)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

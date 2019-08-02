@@ -40,6 +40,7 @@ export default {};
   line-height: 36px;
   margin-top: 20px;
   position: relative;
+  padding: 0 20px;
   .gzh {
     display: block;
     text-align: center;
@@ -57,6 +58,7 @@ export default {};
 @media screen and (max-width: 1200px) {
   .flower-box {
     width: auto;
+    font-size: 14px;
   }
 }
 </style>
