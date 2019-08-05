@@ -47,7 +47,7 @@
         </Col>
       </Row>
     </div>
-    <div class="new-list">
+    <div class="new-list" v-if="fasle">
       <Row :gutter="16">
         <Col span="6" style="margin:20px 0;" :xs="24" :sm="12" :md="12">
           <h1>行业新闻</h1>

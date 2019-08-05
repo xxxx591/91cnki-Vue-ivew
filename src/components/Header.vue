@@ -66,8 +66,8 @@ export default {
       activeNum: "1",
       goodsList:[
         {goodsName:'本科论文',goodsId:1},
-        {goodsName:'期刊查询',goodsId:2},
-        {goodsName:'学士论文',goodsId:3},
+        // {goodsName:'期刊查询',goodsId:2},
+        // {goodsName:'学士论文',goodsId:3},
       ]
     };
   },
